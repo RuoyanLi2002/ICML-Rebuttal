@@ -11,3 +11,21 @@ We first present the results of exact sampling, computing closed-form loss, and 
 | 64         | 0.00252| 0.00348| 0.00479| 0.00806| 0.02159| 0.09138| 0.46224|
 | 128        | 0.00253| 0.00352| 0.00483| 0.00916| 0.02921| 0.13943| 0.78970|
 | 256        | 0.00255| 0.00366| 0.00498| 0.01052| 0.04500| 0.23699| 1.24126|
+
+### Pseudo Code:
+```
+# n is dimension
+For n in ls_n:
+    num_constraints = n // 2
+    Total_time = 0
+    For i in range(repeat_num):
+        Randomly generate unconstrained parameter and constraints
+        Conduct exact sampling
+        Compute closed-form loss
+        Compute gradient estimator
+        Total_time += time
+    Total_time /= repeat_num
+    print(Total_time)
+```
+
+We next investigate the impact of the number of constraints (num_k). We conduct experiments on the challenging n=2048 setting. Similar to the findings in scaling the number of dimensions, using larger batch sizes significantly reduces computation time per sample. Additionally, we also found that increasing the number of constraints does not significantly increase the computational time. For example, under batch_size = 64, increasing the number of constraints from 256 to 512 only increases computational time by 32%.

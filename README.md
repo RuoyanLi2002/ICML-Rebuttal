@@ -29,3 +29,26 @@ For n in ls_n:
 ```
 
 We next investigate the impact of the number of constraints (num_k). We conduct experiments on the challenging n=2048 setting. Similar to the findings in scaling the number of dimensions, using larger batch sizes significantly reduces computation time per sample. Additionally, we also found that increasing the number of constraints does not significantly increase the computational time. For example, under batch_size = 64, increasing the number of constraints from 256 to 512 only increases computational time by 32%.
+
+| Batch Size | num_k=32 | num_k=64 | num_k=128 | num_k=256 | num_k=512 | num_k=1024 |
+|------------|----------|----------|-----------|-----------|-----------|------------|
+| 16         | 0.05109  | 0.05343  | 0.05894   | 0.07336   | 0.10885   | 0.20515    |
+| 32         | 0.09899  | 0.10259  | 0.11060   | 0.13211   | 0.18119   | 0.31654    |
+| 64         | 0.19531  | 0.20241  | 0.21666   | 0.24871   | 0.32935   | 0.46224    |
+| 128        | 0.29093  | 0.30316  | 0.32456   | 0.38556   | 0.52796   | 0.78970    |
+| 256        | 0.47706  | 0.48106  | 0.50057   | 0.52001   | 0.84375   | 1.24126    |
+
+### Pseudo Code:
+```
+# num_k is number of constraints
+For num_k in ls_k:
+    Total_time = 0
+    For i in range(repeat_num):
+        Randomly generate unconstrained parameter and constraints
+        Conduct exact sampling
+        Compute closed-form loss
+        Compute gradient estimator
+        Total_time += time
+    Total_time /= repeat_num
+    print(Total_time)
+```

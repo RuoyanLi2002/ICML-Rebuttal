@@ -63,21 +63,12 @@ For num_k in ls_k:
 
 
 ### [Comparison with Baseline Constrained Reparameterization]
-| **Stock Investment**           | **Value**         |
-|-|-|
-| Constrained Reparametrization  | 1.8162(0.2966)    |
 
-
-| **Chemical Process Units and Subsystems** | **CSTR**    | **Plant**     | **Distillation** |
-|-|-|-|-|
-| Constrained Reparametrization            | 7.13(3.22) | 0.14(0.07)    | 2.22(0.94)       |
-
-
-| **Charge Neural Prediction**             | **MAD**         | **NLL**           |
-|-|-|-|
-| Constrained Reparametrization           | 0.0256(0.0007)  | 334.03(2398)      |
-| Constrained Reparametrization Ensemble  | 0.0242(0.0006)  | 4883.46(1695)     |
-
+| VAE + Constrained Reparam             | LL           | ELBO          | RL           | Violation |
+| -                                     | -            | -             | -            | -         |
+| VAE + Constrained Reparam             | -22.33(0.48) | -23.83(0.49)  | 14.54(0.58)  | 0.0(0.0)   |
+| Ladder VAE + Constrained Reparam      | -25.27(0.19) | -31.56(0.48)  | 25.20(0.62)  | 0.0(0.0)   |
+| Graph VAE + Constrained Reparam       | -22.96(0.80) | -23.55(0.86)  | 16.08(1.38)  | 0.0(0.0)   |
 
 | **DDPM + Constrained Reparametrization** | **FID**  | **IS**            |
 |-|-|-|
@@ -86,8 +77,26 @@ For num_k in ls_k:
 | Lsun Church                              | 4.895   | 2.377(0.032)      |
 | Lsun Cat                                 | 12.696  | 4.7071(0.062)     |
 
-| VAE + Constrained Reparam             | LL           | ELBO          | RL           | Violation |
-| -                                     | -            | -             | -            | -         |
-| VAE + Constrained Reparam             | -22.33(0.48) | -23.83(0.49)  | 14.54(0.58)  | 0.0(0.0)   |
-| Ladder VAE + Constrained Reparam      | -25.27(0.19) | -31.56(0.48)  | 25.20(0.62)  | 0.0(0.0)   |
-| Graph VAE + Constrained Reparam       | -22.96(0.80) | -23.55(0.86)  | 16.08(1.38)  | 0.0(0.0)   |
+| **Charge Neural Prediction**             | **MAD**         | **NLL**           |
+|-|-|-|
+| Constrained Reparametrization           | 0.0256(0.0007)  | 334.03(2398)      |
+| Constrained Reparametrization Ensemble  | 0.0242(0.0006)  | 4883.46(1695)     |
+
+| **Chemical Process Units and Subsystems** | **CSTR**    | **Plant**     | **Distillation** |
+|-|-|-|-|
+| Constrained Reparametrization            | 7.13(3.22) | 0.14(0.07)    | 2.22(0.94)       |
+
+| **Stock Investment**           | **Value**         |
+|-|-|
+| Constrained Reparametrization  | 1.8162(0.2966)    |
+
+
+
+
+
+
+
+
+
+
+

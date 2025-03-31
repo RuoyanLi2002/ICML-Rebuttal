@@ -93,7 +93,8 @@ For num_k in ls_k:
 
 
 ### [Updated Paper]
-<embed src="updated_paper.pdf" width="100%" height="600">
+[View the PDF](updated_paper.pdf)
+
 
 
 

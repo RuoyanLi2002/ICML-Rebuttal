@@ -93,7 +93,7 @@ For num_k in ls_k:
 
 
 ### [Updated Paper]
-<iframe src="updated_paper.pdf" width="100%" height="600"></iframe>
+<embed src="updated_paper.pdf" width="100%" height="600">
 
 
 

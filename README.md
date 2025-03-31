@@ -52,3 +52,39 @@ For num_k in ls_k:
     Total_time /= repeat_num
     print(Total_time)
 ```
+
+### [Comparison with Baseline CL in DDPM]
+| **DDPM + CL** | **FID**  | **IS**          |
+|---------------|----------|-----------------|
+| **CIFAR**     | 4.234    | 8.535(0.157)    |
+| **CelebA**    | 12.067   | 2.345(0.039)    |
+| **Lsun Church** | 6.695  | 2.319(0.028)    |
+| **Lsun Cat**    | 13.472 | 4.642(0.081)    |
+
+
+### [Comparison with Baseline Constrained Reparameterization]
+| **Stock Investment**           | **Value**         |
+|-|-|
+| Constrained Reparametrization  | 1.8162(0.2966)    |
+
+---
+
+| **Chemical Process Units and Subsystems** | **CSTR**    | **Plant**     | **Distillation** |
+|-|-|-|-|
+| Constrained Reparametrization            | 7.13(3.22) | 0.14(0.07)    | 2.22(0.94)       |
+
+---
+
+| **Charge Neural Prediction**             | **MAD**         | **NLL**           |
+|-|-|-|
+| Constrained Reparametrization           | 0.0256(0.0007)  | 334.03(2398)      |
+| Constrained Reparametrization Ensemble  | 0.0242(0.0006)  | 4883.46(1695)     |
+
+---
+
+| **DDPM + Constrained Reparametrization** | **FID**  | **IS**            |
+|-|-|-|
+| CIFAR                                    | 3.881   | 9.2126(0.122)     |
+| CelebA                                   | 10.961  | 2.043(0.028)      |
+| Lsun Church                              | 4.895   | 2.377(0.032)      |
+| Lsun Cat                                 | 12.696  | 4.7071(0.062)     |
